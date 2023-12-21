@@ -17,7 +17,7 @@ export const handleInputChange = (e, setSearchTerm) => {
       );
       const result = await response.json();
       setData(result.meals);
-  
+
       const imagePromises = result.meals.map((meal) => {
         return new Promise((resolve) => {
           const img = new Image();
@@ -25,11 +25,12 @@ export const handleInputChange = (e, setSearchTerm) => {
           img.src = meal.strMealThumb;
         });
       });
-  
+
       await Promise.all(imagePromises);
-      setLoader(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setLoader(false);
     }
   };
   

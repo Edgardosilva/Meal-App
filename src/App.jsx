@@ -5,7 +5,7 @@ import InputSearch from './components/InputSearch'
 function App() {
 
   return (
-    <main className='flex h-screen flex-col bg-sky-950'>
+    <main className='flex h-screen flex-col bg-slate-200 '>
       <NavBar />
       <InputSearch />
     </main>
