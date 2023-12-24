@@ -33,12 +33,9 @@ const SearchComponent = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center mt-12 flex-col">
+      <div className="flex items-center justify-center mt-12 flex-col ">
         <div className="w-full max-w-md relative">
-          <label
-            className="block text-gray-700 text-xl font-bold mb-2"
-            htmlFor="search"
-          >
+          <label className="block text-mainColor-600 text-xl font-bold mb-6 text-[25px]" htmlFor="search">
             Search by ingredient, example: chicken
           </label>
           <div className="relative">
@@ -58,16 +55,21 @@ const SearchComponent = () => {
           <Loader />
         ) : data && data.length > 0 ? (
           <div className="flex items-center justify-center w-full mt-14 p-5">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-h-[800px] overflow-y-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-h-[800px] overflow-scroll">
               {data.map((meal, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <img
-                    src={meal.strMealThumb}
-                    alt={meal.strMeal}
-                    className="w-80 rounded-md shadow-md cursor-pointer hover:opacity-70"
-                    onClick={() => showMealModal(meal)}
-                  />
-                  <h1 className="text-slate-600 mt-2">{meal.strMeal}</h1>
+                <div key={index} className="flex flex-col items-center shadow-xl bg-mainColor-200 rounded-xl overflow-hidden h-[300px] w-[300px] bg-opacity-50 backdrop-blur-mg cursor-pointer transition-transform transition-box-shadow transform-gpu hover:scale-110 hover:shadow-lg">
+                  <div className="rounded-xl h-[700px] w-[270px]  mt-[15px] overflow-hidden">
+                    <img
+                      src={meal.strMealThumb}
+                      alt={meal.strMeal}
+                      className="h-[220px] w-[270px] rounded-xl "
+                      onClick={() => showMealModal(meal)}
+                    />
+                  </div>
+                  <div className="w-full h-full pl-4 flex flex-col justify-center">
+                    <h1 className="text-mainColor-900 font-bold text-[18px]">{meal.strMeal}</h1>
+                    <h2 className="italic">{meal.strArea} food</h2>
+                  </div>
                 </div>
               ))}
             </div>

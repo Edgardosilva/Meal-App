@@ -5,7 +5,7 @@ import InputSearch from './components/InputSearch'
 function App() {
 
   return (
-    <main className='flex h-screen flex-col bg-slate-200 '>
+    <main className='flex h-screen flex-col bg-gradient-to-r from-mainColor-300 to-mainColor-500 '>
       <NavBar />
       <InputSearch />
     </main>
