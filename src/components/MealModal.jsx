@@ -12,7 +12,7 @@ const MealModal = ({ clickedMeal, setModalOn, modalOn }) => {
 
   return (
     <main className="absolute flex flex-col items-center justify-center w-full h-screen ">
-      <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-80 backdrop-blur-sm"></div>
+      <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-80 backdrop-blur-sm "></div>
       <section className="z-0 flex">
         <article className="rounded pr-2">
           <img
