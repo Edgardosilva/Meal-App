@@ -17,17 +17,24 @@ const MealModal = ({ clickedMeal, setModalOn, modalOn }) => {
         <article className="rounded pr-2">
           <img
             src={clickedMeal.strMealThumb}
-            className="w-[450px] h-[450px] rounded-xl"
+            className=" hidden w-[450px] h-[450px] rounded-xl sm:hidden lg:block"
             alt={clickedMeal.strMeal}
           />
         </article>
-        <section className="relative w-[450px] h-[450px] bg-mainColor-200 flex justify-between text-gray-700 text-xl rounded-xl">
+        <section className="relative w-[450px] h-[450px] bg-gradient-to-r from-mainColor-100 to-mainColor-300 flex justify-between text-gray-700 text-xl rounded-xl">
           <article className="flex flex-col w-[450px] p-5 m-1 overflow-y-scroll">
-            <h1 className="text-[1.8rem] mb-4 font-bold text-mainColor-600">
+            <h1 className="text-center text-[1.8rem] mb-4 font-bold text-mainColor-600 sm:text-center lg:text-left">
               {clickedMeal.strMeal}
             </h1>
-            <h1 className='font-bold text-[19px] italic'>Origin: {clickedMeal.strArea}</h1>
-            <h1 className='font-bold text-[19px] italic'>Category: {clickedMeal.strCategory}</h1>
+            <div className='s flex justify-center'>
+              <img
+                src={clickedMeal.strMealThumb}
+                className="h-[220px] w-[270px] rounded-xl mt-4 mb-3 sm:block lg:hidden shadow-lg"
+                alt={clickedMeal.strMeal}
+              />
+            </div>
+            <h1 className='text-center mt-4 font-bold text-[19px] italic lg:text-left lg:mt-0'>Origin: {clickedMeal.strArea}</h1>
+            <h1 className='text-center font-bold text-[19px] italic lg:text-left'>Category: {clickedMeal.strCategory}</h1>
             <ul className="list-disc">
               <h3 className="mb-3 font-bold text-[19px] mt-3">Ingredients:</h3>
               {ingredientKeys.map((ingredientKey, index) => (
@@ -40,7 +47,7 @@ const MealModal = ({ clickedMeal, setModalOn, modalOn }) => {
           </article>
         </section>
       </section>
-      <section className="flex flex-col justify-between bg-gradient-to-r from-mainColor-300 to-mainColor-500 z-0 w-[900px] h-[340px] p-6 m-2 rounded-xl">
+      <section className="flex flex-col justify-between bg-gradient-to-r from-mainColor-300 to-mainColor-500 w-[450px] h-[350px] z-0  p-6 m-2 rounded-xl lg:w-[900px]">
         <h1 className="text-[1.8rem] font-bold text-mainColor-600">Instructions</h1>
         <div className='overflow-y-scroll h-[150px]'>{clickedMeal.strInstructions}</div>
         <article>
@@ -57,3 +64,4 @@ const MealModal = ({ clickedMeal, setModalOn, modalOn }) => {
 };
 
 export default MealModal;
+
