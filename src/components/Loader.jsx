@@ -3,7 +3,7 @@ import React from 'react';
 const Loader = () => {
     
     return (
-        <div className="flex justify-center items-center w-[200px] h-[1000px]">
+        <div className="flex justify-center items-center w-[120px] h-[300px]">
           <img
             src='src/assets/loading.png'
             className="animate-spin duration-3000"

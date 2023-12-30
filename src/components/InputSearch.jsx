@@ -5,7 +5,7 @@ import {
   handleSubmit,
   fetchData,
 } from "../functions/searchFunctions";
-import MealModal from "./MealModal";
+import ModalLayout from "./ModalLayout";
 import Cards from "./Cards";
 import SearchBar from "./SearchBar";
 import NotResults from "./NotResults";
@@ -38,7 +38,7 @@ const SearchComponent = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center mt-12 flex-col ">
+      <div className="flex items-center justify-center flex-col ">
         <SearchBar
           handleInput={handleInput}
           searchTerm={searchTerm}
@@ -53,7 +53,7 @@ const SearchComponent = () => {
         )}
       </div>
       {modalOn && (
-        <MealModal
+        <ModalLayout
           clickedMeal={clickedMeal}
           setModalOn={setModalOn}
           modalOn={modalOn}
