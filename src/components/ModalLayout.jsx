@@ -13,8 +13,7 @@ const ModalLayout = ({ clickedMeal, setModalOn, modalOn }) => {
   );
 
   return (
-    <main className="absolute flex flex-col items-center justify-center w-full h-screen ">
-      <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-80 backdrop-blur-sm"></div>
+    <main className="absolute flex flex-col items-center justify-center w-full h-screen animate-fade animate-duration-500 bg-black bg-opacity-90 ; ">
       <section className="z-0 flex w-[350px] h-[600px] mb-16 lg:w-[900px] lg:h-[400px] lg:mb-[59px]">
         <article className="rounded pr-2">
           <img
