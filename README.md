@@ -33,7 +33,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
     ```
 4. Inicia la aplicación:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Uso
